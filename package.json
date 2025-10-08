@@ -1,0 +1,27 @@
+{
+  "name": "aframe_project",
+  "version": "1.0.0",
+  "description": "A-Frame VR project with Vite",
+  "homepage": "https://github.com/mjcho782/aframe_Project#readme",
+  "bugs": {
+    "url": "https://github.com/mjcho782/aframe_Project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjcho782/aframe_Project.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "aframe": "1.7.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
