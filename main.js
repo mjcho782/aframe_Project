@@ -16,5 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Change box color on click
             box.setAttribute('color', '#FF6B6B');
         });
+        // ll
     }
 });
