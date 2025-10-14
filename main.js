@@ -1,6 +1,3 @@
-import roomGlbUrl from './room.glb?url';
-import ghostGlbUrl from './ghost.glb?url';
-
 const THREE = window.AFRAME && window.AFRAME.THREE ? window.AFRAME.THREE : window.THREE;
 const GHOST_SCALE = 3.0;
 
@@ -82,11 +79,6 @@ AFRAME.registerComponent('hover-highlight', {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Ensure GLB asset URLs resolve correctly in production (GitHub Pages/Vercel)
-    const roomAsset = document.querySelector('a-asset-item#room');
-    if (roomAsset) roomAsset.setAttribute('src', roomGlbUrl);
-    const ghostAsset = document.querySelector('a-asset-item#ghost');
-    if (ghostAsset) ghostAsset.setAttribute('src', ghostGlbUrl);
     console.log('A-Frame VR Project loaded successfully!');
     const box = document.querySelector('a-box');
     if (box) {
