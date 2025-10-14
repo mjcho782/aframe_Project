@@ -9,19 +9,18 @@
 </head>
 <body>
     <a-scene>
-        <!-- Basic scene with a box -->
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-        
-        <!-- Ground plane -->
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        
-        <!-- Sky -->
+            <a-assets>
+                <a-asset-item id="room" src="room.glb"></a-asset-item>
+                <a-asset-item id="ghost" src="ghost.glb"></a-asset-item>
+            </a-assets>
+
+            <a-entity id="roomEntity" gltf-model="#room" position="-10 -20 0" scale="1 1 1"></a-entity>
+
         <a-sky color="#ECECEC"></a-sky>
+        <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+        <a-entity light="type: directional; intensity: 0.9" position="0 5 -5"></a-entity>
         
-        <!-- Camera -->
-        <a-camera>
-            <a-cursor></a-cursor>
-        </a-camera>
+        <a-camera cursor="rayOrigin: mouse" raycaster="objects: #roomEntity, #bookEntity, .selectable; recursive: true"></a-camera>
     </a-scene>
     
     <script type="module" src="/main.js"></script>
