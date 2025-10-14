@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Normalize asset base to ensure correct paths on subpaths and different hosts
     const pagePath = window.location.pathname || '/';
     const basePath = pagePath.endsWith('/') ? pagePath : pagePath.substring(0, pagePath.lastIndexOf('/') + 1);
-    const assetBase = `${basePath}assets/`;
+    const assetBase = `${basePath}`;
     const setAssetSrcIfPresent = (selector, file) => {
         const el = document.querySelector(selector);
         if (el) el.setAttribute('src', `${assetBase}${file}`);
