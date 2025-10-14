@@ -79,6 +79,16 @@ AFRAME.registerComponent('hover-highlight', {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Normalize asset base to ensure correct paths on subpaths and different hosts
+    const pagePath = window.location.pathname || '/';
+    const basePath = pagePath.endsWith('/') ? pagePath : pagePath.substring(0, pagePath.lastIndexOf('/') + 1);
+    const assetBase = `${basePath}assets/`;
+    const setAssetSrcIfPresent = (selector, file) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute('src', `${assetBase}${file}`);
+    };
+    setAssetSrcIfPresent('a-asset-item#room', 'room.glb');
+    setAssetSrcIfPresent('a-asset-item#ghost', 'ghost.glb');
     console.log('A-Frame VR Project loaded successfully!');
     const box = document.querySelector('a-box');
     if (box) {
